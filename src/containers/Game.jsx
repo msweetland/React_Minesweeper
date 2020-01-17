@@ -1,30 +1,27 @@
 import React from 'react';
 import Minesweeper from '../MineSweeper';
 import Tile from '../components/Tile';
+import Options from '../components/Options';
 
 class Game extends React.Component {
   constructor() {
     super();
-    const defaultHeight = 20;
-    const defaultWidth = 20;
-    this.game = new Minesweeper(defaultHeight, defaultWidth);
+    this.game = new Minesweeper();
     this.state = {
       board: this.game.getBoard(),
-      // height: defaultHeight,
-      // width: defaultWidth
     };
   }
 
-  onNewGame = (event) => {
-    event.preventDefault();
-    this.game = new Minesweeper(20, 20);
+  onNewGame = (height = 16, width = 16, percentBombs = 0.15) => {
+    this.game = new Minesweeper(height, width, percentBombs);
     const board = this.game.getBoard();
     this.setState({ board });
   }
 
   onMovePrimary = (row, col) => {
     const board = this.game.primaryMove(row, col);
-    this.setState({ board });
+    const { isWinner } = this.game.getGameStats();
+    this.setState({ board, isWinner });
   }
 
   onMoveSecondary = (row, col) => {
@@ -33,18 +30,14 @@ class Game extends React.Component {
   }
 
   render() {
-    const { board } = this.state;
+    const { board, isWinner } = this.state;
     return (
-      <div>
-        <h2>Emojisweeper</h2>
-        <div>
-          <button type="button" onClick={this.onNewGame}>
-            New Game
-          </button>
-        </div>
+      <div className="Presentation">
+        <h1>{isWinner ? 'You Win!' : 'Emojisweeper'}</h1>
+        <Options onNewGame={this.onNewGame} />
         <div>
           {board.map((row, rowIdx) => (
-            <div>
+            <div className="Row">
               {row.map((tile, colIdx) => (
                 <Tile
                   tile={tile}

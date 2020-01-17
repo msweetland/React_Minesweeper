@@ -1,0 +1,38 @@
+* {
+  font-family: Sans-Serif;
+}
+
+.Presentation {
+  text-align: center;
+}
+
+.Row {
+  display: flex;
+  justify-content: center;
+}
+
+.Tile {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.Options-Button {
+  padding: 0;
+  border: none;
+  background: none;
+  background-color: #DFDFDF;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  cursor: pointer;
+}
+
+button:focus {
+  outline:0;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MinesweeperTile from '../MineSweeper/MinesweeperTile';
-import './Tile.css';
 
 class Tile extends React.Component {
   onLeftClick = (event) => {

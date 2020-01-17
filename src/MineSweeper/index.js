@@ -1,13 +1,13 @@
 import MinesweeperTile from './MinesweeperTile';
 
 class Minesweeper {
-  constructor(numRows, numCols, percentBombs = 0.15) {
+  constructor(numRows = 16, numCols = 16, percentBombs = 0.01) {
     this.numRows = numRows;
     this.numCols = numCols;
     this.numBombs = Math.ceil(numRows * numCols) * percentBombs;
-    // this.numFlagsUsed = 0;
     this.moves = 0;
     this.isGameOver = false;
+    this.isWinner = false;
     this.board = Array.from({ length: numRows }, () => {
       return Array.from({ length: numCols }, () => new MinesweeperTile());
     });
@@ -18,12 +18,13 @@ class Minesweeper {
 
   getGameStats = () => ({
     moves: this.moves,
-    isGameOver: this.isGameOver
+    isGameOver: this.isGameOver,
+    isWinner: this.isWinner
   });
 
   endGame = () => {
     this.isGameOver = true;
-    this.board.forEach((row) => {
+    this.board.forEach(row => {
       row.forEach(tile => {
         if (tile.hasBomb) {
           tile.toggleBomb();
@@ -34,6 +35,7 @@ class Minesweeper {
 
   winGame = () => {
     this.isGameOver = true;
+    this.isWinner = true;
     this.board.forEach(row => {
       row.forEach(tile => {
         if (tile.hasBomb) {
@@ -41,7 +43,7 @@ class Minesweeper {
         }
       });
     });
-  }
+  };
 
   placeBombs(bombsToPlace) {
     let n = bombsToPlace;
@@ -69,7 +71,7 @@ class Minesweeper {
       this.search(row, col);
     } else if (tile.hasBomb) {
       this.endGame();
-    } else {
+    } else if (!tile.clue) {
       this.search(row, col);
     }
 
@@ -86,7 +88,9 @@ class Minesweeper {
   secondaryMove(row, col) {
     if (!this.isGameOver) {
       const tile = this.board[row][col];
-      tile.toggleFlag();
+      if (!tile.clue) {
+        tile.toggleFlag();
+      }
     }
     return this.board;
   }
@@ -174,7 +178,7 @@ class Minesweeper {
       }
     }
     return false;
-  }
+  };
 }
 
 export default Minesweeper;
