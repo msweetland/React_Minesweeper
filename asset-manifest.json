@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Emojisweeper/static/css/main.01fd12bc.chunk.css",
+    "main.js": "/Emojisweeper/static/js/main.39fc56b1.chunk.js",
+    "main.js.map": "/Emojisweeper/static/js/main.39fc56b1.chunk.js.map",
+    "runtime-main.js": "/Emojisweeper/static/js/runtime-main.34359a0e.js",
+    "runtime-main.js.map": "/Emojisweeper/static/js/runtime-main.34359a0e.js.map",
+    "static/js/2.a80a4080.chunk.js": "/Emojisweeper/static/js/2.a80a4080.chunk.js",
+    "static/js/2.a80a4080.chunk.js.map": "/Emojisweeper/static/js/2.a80a4080.chunk.js.map",
+    "index.html": "/Emojisweeper/index.html",
+    "precache-manifest.60afdff12f16c333d4d77493c11c527f.js": "/Emojisweeper/precache-manifest.60afdff12f16c333d4d77493c11c527f.js",
+    "service-worker.js": "/Emojisweeper/service-worker.js",
+    "static/css/main.01fd12bc.chunk.css.map": "/Emojisweeper/static/css/main.01fd12bc.chunk.css.map",
+    "static/js/2.a80a4080.chunk.js.LICENSE": "/Emojisweeper/static/js/2.a80a4080.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.34359a0e.js",
+    "static/js/2.a80a4080.chunk.js",
+    "static/css/main.01fd12bc.chunk.css",
+    "static/js/main.39fc56b1.chunk.js"
+  ]
+}
