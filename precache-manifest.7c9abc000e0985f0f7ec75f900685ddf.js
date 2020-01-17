@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9cbb1eb0a2fb9b2ef5272a1fab9614f3",
+    "revision": "fe2720fc1a30174c313b770cbd5e10a9",
     "url": "/Emojisweeper/index.html"
   },
   {
-    "revision": "2c6ba49058f88dc41522",
+    "revision": "454fe165b9c7370e7a78",
     "url": "/Emojisweeper/static/css/main.01fd12bc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Emojisweeper/static/js/2.a80a4080.chunk.js.LICENSE"
   },
   {
-    "revision": "2c6ba49058f88dc41522",
-    "url": "/Emojisweeper/static/js/main.39fc56b1.chunk.js"
+    "revision": "454fe165b9c7370e7a78",
+    "url": "/Emojisweeper/static/js/main.95c36c8a.chunk.js"
   },
   {
     "revision": "1fc94f4b8be41329ea22",
